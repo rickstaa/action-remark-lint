@@ -48,7 +48,7 @@ else
   # Check if remark-lint linter formatted files
   # Note: We use git since parsing wont help if the user supplied the '-s' or '-q' flags
   changed_files="$(git status --porcelain | grep .md | wc -l || echo '0')"
-  if [[ ${changed_files} -eq "0" ]]; then
+  if [[ "${changed_files}" -eq "0" ]]; then
     echo "::set-output name=is_formatted::false"
   else
     echo "::set-output name=is_formatted::true"
